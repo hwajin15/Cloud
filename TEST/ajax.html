@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('#btnsubmit').on('click',function(){
+        let city = $('#city').val();
+        // let city =$('#city > option:selected').val();
+      if(city !=null && city != ''){
+      $.ajax({
+        url:"http://api.openweathermap.org/data/2.5/forecast",
+        type: "GET",
+        data: {
+          q:  $('#city > option:selected').val(),
+          APPID:"05542e36559de019967088aaa2ccb705",
+          units:"metric"
+        },
+        success : function(data){
+           $('#contents').empty();
+          $.each(data.list, function(index, item) {
+            let _image = document.createElement("img");
+            _image.src = "http://openweathermap.org/img/wn/" 
+                    + item.weather[0].icon +"@2x.png";
+
+            let _divhtml = item.dt_txt;
+            _divhtml += ", 기온:" + item.main.temp;
+            _divhtml += " <span style='color:blue;'>" + item.main.temp_min + "</span>";
+            _divhtml += "/<span style='color:red;'>" + item.main.temp_max + "</span>";
+            _divhtml += ", " + item.weather[0].description;
+
+            let imageSpan = document.createElement("span");
+            imageSpan.appendChild(_image);
+            let infoSpan = document.createElement("span");
+            infoSpan.innerHTML = _divhtml;
+
+            let div = document.createElement("div");
+            div.appendChild(imageSpan);
+            div.appendChild(infoSpan);
+           
+            $('#contents').append(div);
+          
+                    
+            });
+           
+        },
+        error: function(err){
+          console.log("error" + err);
+        }
+    
+      });
+    
+    }
+    });
+  });
+   
+     </script>
+</head>
+    <body>
+     
+        <!-- <input type="text" name="city" id="city" placeholder="도시를 입력하세요"> -->
+        <!-- <input type="button" id="btnsubmit" value="검색"> -->
+        
+        <select>
+          <option id="city" value="seoul">서울</option>
+          <option id="city" value="london">런던</option>
+          <option id="city" value="tokyo">도쿄</option>
+        </select>
+     <button id ="btnsubmit" >검색</button>
+        <div id="contents">
+    </body>
+
+</html>
