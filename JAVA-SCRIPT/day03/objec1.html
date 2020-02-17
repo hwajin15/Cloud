@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        // let person ={ 
+        //     name: '정서화',
+        //     address: '서울시 강서구',
+        //     eat: function(food){
+        //         console.log(food + "을 먹었습니다.");
+        //     }
+        // };
+        let school ={
+            name:'multicompus',
+            capacity:[30,30,30],
+            grade:'3',
+            event: function(month, eventName){
+                console.log(this.name+ ","+ month + "달에 " + eventName +"이벤트가 있습니다");
+            }
+        };
+        
+        // console.log(person.name);
+        // person.eat('바나나');
+        console.log(school.name);
+        school.event('2월','졸업식');
+
+        
+        </script>
+    </head>
+</html>

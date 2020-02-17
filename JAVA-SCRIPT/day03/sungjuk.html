@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Studnet(name , kor ,math , eng,sci)
+            {
+                this.이름 =name;
+                this.국어 =kor;
+                this.수학= math;
+                this.영어=eng;
+                this.과학 =sci;
+                this.sum  = function(){
+                    return this.국어 + this.수학 + this.영어 + this.과학 ;
+               
+                this.avg =function(){
+                    return this.sum() /4;
+            }
+                }
+            }
+            let students =[];
+           
+            students.push(new Studnet('AAA',85,90,80,90));
+            students.push(new Studnet('BBB',78,80,80,70));
+            students.push(new Studnet('CCC',65,90,80,60));
+            students.push(new Studnet('DDD',95,60,80,88));
+            students.push(new Studnet('EEE',85,80,80,76));
+
+            let totalSum =0;
+
+
+            function myFilter(element, index, array){
+                return element.sum()>=300;
+
+            }
+            let highGroup = students.filter(myFilter);
+            highGroup.forEach(function(element){
+                console.log(element.이름 + "/" + element.sum());
+            })
+            // let totalrow =students.length
+            // for(let i =0; i<totalrow; i++){
+            //     console.log(students.pop());
+            // }
+         
+            // for(let i in students){
+            //     students[i].sum= students[i].국어 +
+            //     students[i].수학 + students[i].영어;
+
+            //     students[i].avg =students[i].sum/3;
+            //     // //학생별 총점 평균 전체 평균
+               
+            //     };
+            //     students[i].avg =function(){
+            //         return students[i].sum() /3; //함수로 호출하기
+
+            //     }
+            // }
+            
+            // students.sort(function(left,right){
+            //     return right.sum() -left.sum();
+            // }
+            // );
+            // for (let i in students){
+            //     console.log(students[i].sum + "/"+ students[i].avg)
+
+            //     with(students[i]){
+            //         console.log(이름 + ":" +sum() + "/" +avg());
+            //         totalSum += sum();
+            //     }
+            // }
+
+            //전체 평균 구하기 
+            // console.log("전체평균은" + totalSum /students.length /3);
+         
+            
+       </script>
+    </head>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function saveTemporary(){
+            //선택된 sns 값 가져오기 
+
+            let selectedsns =document.getElementsByName("sns");
+            let selectedcount =0
+            for(let i =0; i<selectedsns.length; i++){
+                if(selectedsns[i].checked){
+                    selectedcount++;
+                console.log(selectedsns[i].value);
+               
+                }
+            }
+            //sns 가 한개도 선택이 안된 경우에는 alert() 표시
+           if(selectedcount == 0 ){
+               alert( "sns를 선택해주세요");
+           }
+
+           let inputs =document.getElementsByTagName('input');
+           for (let i =0; i<inputs.length; i++){
+               console.log(inputs[i]);
+           }
+        }
+
+
+        window.onload =function(){
+            let btnNext =document.getElementById("btnNext");
+            btnNext.onclick =function(){
+                let name =document.getElementById("txtName");
+                let id =document.getElementById("txtId");
+                let password =document.getElementById("txtPwd");
+                
+                if(name.value == ""){
+                    alert("이름은 필수 사항입니다.");
+                    return;
+                }
+                if(id.value == ""){
+                    alert("아이디는 필수 사항입니다.");
+                    return;
+                }
+                if(password.value == ""){
+                    alert("비밀번호는  필수 사항입니다.");
+                    return;
+                }
+                //다음단계 or form.action 페이지로 이동
+                let frm = document.getElementById("registForm");
+                frm.action ="next.html"
+                frm.submit();
+            }
+        }
+        
+        </script>
+
+    </head>
+        <body>
+            <form action="regist.html" method="GET" id="registForm"> 
+                <div> *는 필수 입력사항입니다. </div>
+                *이름:<input type="text" id= "txtName" name ="name"placeholder="이름을 입력하세요">
+            <br><br>
+                *아이디:<input type="text" id= "txtId" name="id" placeholder="아이디를 입력하세요">
+            <br><br>
+                *비밀번호:<input type="password"  id= "txtPwd" name ="password" placeholder="비밀번호 입력하세요">
+                <br><br>
+                남성<input type="radio" name="gender">
+                여성<input type="radio" name="gender" >
+                <br><br>
+                *사용하는 SNS:
+               <input type="checkbox" name="sns"  value="facebook">FACEBOOK
+               <input type="checkbox" name="sns" value="inst">INSTGRAM
+               <input type="checkbox" name="sns" value="twitter">TWITTER
+               <input type="checkbox" name="sns" value="google">GOOGLE+
+               <br><br>
+                연령:
+                <select name="age">
+                    <option value="10">10대</option>
+                    <option value="20">20대</option> 
+                    <option value="30">30대</option>
+                    <option value="40">40대</option>
+                </select><br><br>
+                사진:
+                <input type="file"><br><br>
+                자기소개:
+                <textarea cols="40" rows="5">
+                </textarea><br><br>
+                <input type="submit" value="회원가입">
+                <input type="button"  value="다음단게" id="btnNext">
+                <input type="button" value="임시저장" onclick="saveTemporary()">
+            </form>
+
+    </body>
+</html>

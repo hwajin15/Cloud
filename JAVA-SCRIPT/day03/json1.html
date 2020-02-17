@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        let json=`{
+        "id": 12345,
+        "name" : "정서화",
+        "balance" : 10000
+        
+        }`;
+        console.log(json);
+        console.log(typeof json);
+        console.log(json.name +"/" + json.blance);
+      
+        // let stringJson =JSON.stringify(json);  //object -> string 
+        // console.log(JSON.stringify(json));
+        let parsedJSON =JSON.parse(json);
+        console.log(typeof JSON.parse(json));  //string -> object 객체로
+        console.log(parsedJSON.name +"/" + parsedJSON.balance);
+        </script>
+    </head>
+</html>

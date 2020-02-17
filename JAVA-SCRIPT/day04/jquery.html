@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script src="../jquery/jquery.js">
+            </script>
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+            <script>
+            $(document).ready(function(){
+                // let h1 =document.getElementById("myh1");
+                // h1.style.color ="Red";
+                
+                $("#btnred").on('click',function(){
+                    $("#myh1").css('color','red');
+                });
+                $("#btnblue").on('click',function(){
+                    $("#myh1").css('color','blue');
+                });
+            
+            });
+            
+            </script>
+    </head>
+    <body>
+
+        <h1 id="myh1">hello , jquery</h1>
+        <button id="btnred">RED</button>
+        <button id="btnblue">BLUE</button>
+    
+    </body>
+</html>

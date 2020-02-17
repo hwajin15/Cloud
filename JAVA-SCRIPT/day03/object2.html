@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        let student = {};
+         
+        student.name = "정서화";
+        student.kor = 100 ;
+        student.math =90;
+        student.eng = 80;
+
+        let sum = 0; //총점
+        let avg = 0; //평균
+
+        sum =student.kor + student.math + student.eng 
+        avg = sum /3 ;
+        console.log(sum);
+        console.log(avg);
+
+
+        //모두 데이터 입니다. 
+        with(student){
+            sum =kor+ math + eng;
+            avg = sum/3;
+        }
+        console.log(sum +"/"+ avg);
+        </script>
+    </head>
+</html>

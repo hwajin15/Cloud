@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        window.onload= function(){
+        let counter =0;
+        let counterNumber = document.getElementById("counter");
+        let puls =document.getElementById("puls")
+        let minus =document.getElementById("minus")
+        puls.onclick =function(){
+            counterNumber.innerText =counter++;
+            }
+        minus.onclick= function(){
+            counterNumber.innerText =counter--;
+        }
+        }
+        </script>
+    </head>
+    <body>
+        <h1 >counter </h1>
+        <h1 id="counter" > 0</h1>
+     <button id="puls">+</button>
+     <button id="minus">-</button>
+    </body>
+</html>

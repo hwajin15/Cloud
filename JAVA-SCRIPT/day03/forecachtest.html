@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script>
+    let array =[90,99,70,80,55,50,88,91,72,41,89];
+    let newarray = [];
+
+    for (let i =0; i<array.length; i++){
+        console.log(array[i]);;
+    }
+    console.log("==========================");
+    array.forEach(function(element)
+    {
+        if(element %2 ==1)
+       newarray.push(element);
+    });
+    newarray.forEach(function(element)
+    {
+        console.log(element);
+    });
+    console.log("==========================");
+
+    let grade = array.map(function(grade)
+    {
+      if(grade >=90){
+          return "A";
+
+      }else if(grade>=80){
+          return "B";
+      }
+      else if(grade>=70){
+          return "C";
+      }
+      else if(grade>=60){
+          return "D";
+      }
+      else {
+          return "F";
+      }
+    });
+    for (let i=0; i<array.length; i++){
+        console.log(array[i]+"=>"+ grade[i]);
+            }
+    grade.forEach(function(grade)
+    {
+        console.log(grade);
+    })
+    // let newmap =[];
+    // for(i =0; i<array.length; i++){
+    //     newmap.push(array[i]*10)
+
+    // }
+    </script>
+</head>
+</html>

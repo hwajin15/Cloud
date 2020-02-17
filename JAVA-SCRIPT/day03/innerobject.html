@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        let primtiviNumber=273; //속성 메소드를 추가 X
+        let objectNumber= new Number(273); //속성 메소드를 추가 O
+        Number.prototype.sum = function(){
+            return "METHOD on prototype";
+        };
+        console.log("primtive" +primtiviNumber);
+        console.log("object" + objectNumber +"/"+
+        objectNumber.sum());
+
+        let myobject =new Object();
+        let myobject2 ={};
+        //myobject2.속성 , myobject2메소드 이름
+
+        console.log(myobject);
+        console.log(myobject.toString());
+
+        //tostring 재정의 (overriding -기존의 함수의 내용을 재정의 )
+        let student = {
+            name : " 정서화 ",
+            grade : " 1학년 ",
+            toString: function(){
+                return this.name + "/" + this.grade;
+            }
+        }
+        console.log("studnet" + student);
+        </script>
+    </head>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        let willEval = "";
+        willEval += "let number=10;";
+        willEval += "console.log(number);";
+
+         eval(willEval); 
+
+        let a= parseInt("123원");
+        let b =parseFloat("3.14$");
+
+        console.log(a);
+        console.log(typeof b);
+
+        let won = "1000 원";
+        let doller = "1.5$";
+        console.log(Number(won) + "/" + Number(doller));
+
+
+        let func1 = function(){
+            console.log("hello world");
+        }
+        let func2 =() => {
+            console.log("hello world");
+        }
+        </script>
+    </head>
+</html>

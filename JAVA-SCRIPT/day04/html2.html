@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+        window.onload =function(){
+            let ul_tag= document.createElement("ul");
+            let li1_tag =document.createElement("li");
+            let li2_tag =document.createElement("li");
+
+            let naver_text =document.createTextNode("Naver");
+            let daum_text =document.createTextNode("Daum");
+            li1_tag.appendChild(naver_text);
+            li2_tag.appendChild(daum_text);
+
+            ul_tag.appendChild(li1_tag);
+            ul_tag.appendChild(li2_tag);
+
+            document.body.appendChild(ul_tag);
+
+            //image tag 추가
+            let myimg = document.createElement("img");
+            myimg.src ="1.PNG";
+            myimg.width="272";
+            myimg.height="500";
+            document.body.appendChild(myimg);
+
+            // let mytag = "<h1 style='color:red;'> hello seohwa hi there</h1>";
+            // document.body.innerHTML ="<h1 style='color:blue;'>hello seohwa hi there";
+            let div1 = document.getElementById("mydiv1");
+            div1.innerHTML ="<h1 style='color:blue;'>hello seohwa hi there";
+            // div1.innerText = "<h1 style='color:blue;'>hello seohwa hi there";
+            document.body.removeChild(document.getElementById('myh1'));
+        }
+        
+        
+        </script>
+    </head>
+    <body>
+        <img src="" alt="" width="" height="">
+        <h1 id ="myh1">Hello dom</h1>
+        <div id ="mydiv1">
+            ~~``~here
+        
+
+
+        </div>
+    </body>
+</html>
