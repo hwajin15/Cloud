@@ -51,3 +51,44 @@ String  한글자 이상
 
 타입변환  Integer.parseInt()
 
+equals 
+
+논리연산자 
+
+
+
+조건문 
+
+if /if-else / if-else if else 문 / swich문 
+
+
+
+
+
+```
+switch ( (int) (avg/10)){
+    case 10:
+    case  9:
+        System.out.println("A");
+        break;
+    case  8:  
+        System.out.println("B");
+        break;
+    case 7:
+        System.out.println("c");
+        break;
+    case 6:
+        System.out.println("d");
+        break;    
+    default:
+        System.out.println("f");
+        break;
+```
+
+약수 구하기 
+
+소수구하기 
+
+피보나치 수열 구하기
+
+5 1123
